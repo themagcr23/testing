@@ -42,12 +42,14 @@ pipeline {
             steps{
               dir('Application'){
                 bat "echo 1 - %cd%"
+                  withSonarQubeEnv('SonarQube instance') {
+                    bat "npm install "
+                    bat "npm install sonar-scanner"
+                    bat "echo 2 - %cd%"
+                    bat "npm run sonar"
+                  }
               }
-              withSonarQubeEnv('SonarQube instance') {
-                //bat "cd Application && echo %cd% && npm install && npm install sonar-scanner"
-                bat "echo 2 - %cd%"
-                //bat "cd Application && npm run sonar"
-              }
+              
             }
         }
     }
