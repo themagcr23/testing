@@ -23,14 +23,11 @@ node {
     checkout scm
   }
   stage('SonarQube Analysis') {
-    def scannerHome = tool 'sonarQube scanner';
-    steps{
-      dir('Application'){
-        withSonarQubeEnv() {
-          bat "${scannerHome}/bin/sonar-scanner"
-        }
+    dir('Application'){
+      def scannerHome = tool 'sonarQube scanner';
+      withSonarQubeEnv() {
+        bat "${scannerHome}/bin/sonar-scanner"
       }
-      
     }
     
   }
