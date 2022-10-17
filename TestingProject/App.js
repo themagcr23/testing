@@ -8,6 +8,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import {TouchableOpacity} from from 'react-native';
 import {
   SafeAreaView,
   ScrollView,
@@ -26,7 +27,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-
+const a = b;
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const Section = ({children, title}): Node => {
