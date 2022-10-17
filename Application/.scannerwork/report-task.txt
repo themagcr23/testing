@@ -1,6 +1,0 @@
-projectKey=poupa_app
-serverUrl=http://localhost:9000
-serverVersion=9.3.0.51899
-dashboardUrl=http://localhost:9000/dashboard?id=poupa_app
-ceTaskId=AYPmWUXb4k4tgsnPBh6s
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYPmWUXb4k4tgsnPBh6s
