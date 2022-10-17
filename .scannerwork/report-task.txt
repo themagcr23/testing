@@ -1,6 +1,6 @@
-projectKey=abc
+projectKey=bb
 serverUrl=http://localhost:9000
 serverVersion=9.3.0.51899
-dashboardUrl=http://localhost:9000/dashboard?id=abc
-ceTaskId=AYPnV07OlgwsxR7Sr1Rg
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYPnV07OlgwsxR7Sr1Rg
+dashboardUrl=http://localhost:9000/dashboard?id=bb
+ceTaskId=AYPnjsjolgwsxR7Sr1S5
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYPnjsjolgwsxR7Sr1S5
