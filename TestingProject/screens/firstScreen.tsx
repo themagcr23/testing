@@ -8,7 +8,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {TouchableOpacity} from from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {
   SafeAreaView,
   ScrollView,

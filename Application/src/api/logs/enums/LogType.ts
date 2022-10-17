@@ -1,0 +1,5 @@
+export enum LogType {
+	APP_CRASH = 'APP_CRASH',
+	REQUEST = 'REQUEST',
+	PERMISSIONS = 'PERMISSIONS',
+}

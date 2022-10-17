@@ -1,0 +1,6 @@
+projectKey=ttt
+serverUrl=http://localhost:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://localhost:9000/dashboard?id=ttt
+ceTaskId=AYPnXbEWlgwsxR7Sr1SM
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYPnXbEWlgwsxR7Sr1SM
