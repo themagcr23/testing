@@ -18,6 +18,16 @@ require('dayjs/locale/fr');
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
+const doSomething = a => {
+	return a;
+}
+const debug = () => {
+	let arr = ['a', 'b', 'c'];
+	for (name in arr) {
+		doSomething(name);
+	}
+};
+
 const App = () => (
 	<SafeAreaProvider>
 		<ErrorBoundary>
@@ -25,7 +35,6 @@ const App = () => (
 				<StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
 				<InternetVerifier>
 					<Router />
-					<View>asd</View>
 				</InternetVerifier>
 				<Loading />
 			</I18nextProvider>
