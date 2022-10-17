@@ -6,6 +6,11 @@ pipeline {
             steps {
                 bat 'node --version'
             }
+        },
+        stage('testing code'){
+            steps{
+                bat 'cd TestingProject && npm run test'
+            }
         }
     }
 }
