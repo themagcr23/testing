@@ -39,12 +39,12 @@ pipeline {
     agent any
     stages {
         stage('SonarQube Analysis'){
-            def scannerHome = tool 'sonarQube scanner';
             steps{
               bat "cd Application"
               bat "npm install"
-              withSonarQubeEnv() {
-                bat "${scannerHome}/bin/sonar-scanner"
+              withSonarQubeEnv('sonarQube scanner') {
+                bat "npm install sonar-scanner"
+                bat "npm run sonar"
               }
             }
         }
