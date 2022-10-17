@@ -40,7 +40,7 @@ pipeline {
     stages {
         stage('SonarQube Analysis'){
             steps{
-              withSonarQubeEnv() {
+              withSonarQubeEnv('SonarQube instance') {
                 bat "cd Application && npm install && npm install sonar-scanner"
                 bat "npm run sonar"
               }
