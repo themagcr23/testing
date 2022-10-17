@@ -19,14 +19,19 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 const doSomething = a => {
+	if (a === NaN) {
+		console.log('a is not a number'); // this is dead code
+	}
+
 	return a;
-}
+};
 const debug = () => {
 	let arr = ['a', 'b', 'c'];
 	for (name in arr) {
 		doSomething(name);
 	}
 };
+debug();
 
 const App = () => (
 	<SafeAreaProvider>
