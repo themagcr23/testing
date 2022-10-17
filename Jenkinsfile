@@ -23,8 +23,13 @@ node {
   }
   stage('SonarQube Analysis') {
     def scannerHome = tool 'sonarQube scanner';
-    withSonarQubeEnv() {
-      bat "cd Application && ${scannerHome}/bin/sonar-scanner"
+    steps{
+      bat "cd Application"
+      bat "npm install"
+      withSonarQubeEnv() {
+        bat "${scannerHome}/bin/sonar-scanner"
+      }
     }
+    
   }
 }
