@@ -35,17 +35,18 @@ node {
   }
 }*/
 
-pipeline{
-  stage('SonarQube Analysis') {
-    
-    steps{
-      bat "cd Application"
-      bat "npm install"
-      def scannerHome = tool 'sonarQube scanner';
-      withSonarQubeEnv() {
-        bat "${scannerHome}/bin/sonar-scanner"
-      }
+pipeline {
+    agent any
+    stages {
+        stage('SonarQube Analysis'){
+            def scannerHome = tool 'sonarQube scanner';
+            steps{
+              bat "cd Application"
+              bat "npm install"
+              withSonarQubeEnv() {
+                bat "${scannerHome}/bin/sonar-scanner"
+              }
+            }
+        }
     }
-    
-  }
 }
