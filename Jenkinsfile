@@ -37,10 +37,11 @@ node {
 
 pipeline{
   stage('SonarQube Analysis') {
-    def scannerHome = tool 'sonarQube scanner';
+    
     steps{
       bat "cd Application"
       bat "npm install"
+      def scannerHome = tool 'sonarQube scanner';
       withSonarQubeEnv() {
         bat "${scannerHome}/bin/sonar-scanner"
       }
