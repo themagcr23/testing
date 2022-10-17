@@ -42,7 +42,7 @@ pipeline {
             steps{
               withSonarQubeEnv('SonarQube instance') {
                 bat "cd Application && npm install && npm install sonar-scanner"
-                bat "pwd"
+                bat "echo %cd%"
                 bat "cd Application && npm run sonar"
               }
             }
