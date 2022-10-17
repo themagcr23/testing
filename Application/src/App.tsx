@@ -25,6 +25,7 @@ const App = () => (
 				<StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
 				<InternetVerifier>
 					<Router />
+					<View>asd</View>
 				</InternetVerifier>
 				<Loading />
 			</I18nextProvider>
