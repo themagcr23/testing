@@ -17,10 +17,25 @@ pipeline {
 }
 */
 
+/*
 node {
   stage('SCM') {
     checkout scm
   }
+  stage('SonarQube Analysis') {
+    def scannerHome = tool 'sonarQube scanner';
+    steps{
+      bat "cd Application"
+      bat "npm install"
+      withSonarQubeEnv() {
+        bat "${scannerHome}/bin/sonar-scanner"
+      }
+    }
+    
+  }
+}*/
+
+pipeline{
   stage('SonarQube Analysis') {
     def scannerHome = tool 'sonarQube scanner';
     steps{
