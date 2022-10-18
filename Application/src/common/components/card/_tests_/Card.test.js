@@ -4,7 +4,7 @@ import Card from "../Card";
 
 describe('random test', () => {
     it('test component', () => {
-        const tree = create(<Card isClickable={false}/>);
+        const tree = create(<Card isClickable={true}/>);
         const btn = tree.root.findByProps({testID: 'btn'});
         
         expect(btn).not.toBeNull(); // b
