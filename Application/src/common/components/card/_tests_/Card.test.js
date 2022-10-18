@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Card from "../Card";
+import Card from '../Card';
 
 describe('random test', () => {
     it('test component', () => {
