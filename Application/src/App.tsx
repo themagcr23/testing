@@ -25,13 +25,8 @@ const doSomething = a => {
 
 	return a;
 };
-const debug = () => {
-	let arr = ['a', 'b', 'c'];
-	for (name in arr) {
-		doSomething(name);
-	}
-};
-debug();
+
+doSomething('qwerty');
 
 const App = () => (
 	<SafeAreaProvider>
