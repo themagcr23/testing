@@ -33,7 +33,7 @@ class Card extends PureComponent<Props, State> {
 		return (
 			<View>
 				{isClickable && (
-					<TouchableOpacity style={styles.container} onPress={onPress}>
+					<TouchableOpacity style={styles.container} onPress={onPress} testID="btn">
 						{this.props.children}
 					</TouchableOpacity>
 				)}
