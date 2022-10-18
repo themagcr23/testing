@@ -19,9 +19,9 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 const doSomething = a => {
-	/*if (a === NaN) {
+	if (a === NaN) {
 		console.log('a is not a number'); // this is dead code
-	}*/
+	}
 
 	return a;
 };
