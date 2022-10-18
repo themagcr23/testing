@@ -7,10 +7,10 @@ describe('random test', () => {
         const tree = create(<Card isClickable={false}/>);
         const btn = tree.root.findByProps({testID: 'btn'});
         
-        expect(btn).not.toBeNull();
+        expect(btn).not.toBeNull(); // b
     });
 
     it('always pass', () => {
-        expect(true).toBeTruthy();
+        expect(true).toBeTruthy(); // a
     });
 });
