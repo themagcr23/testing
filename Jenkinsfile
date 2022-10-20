@@ -1,46 +1,3 @@
-def scannerHome = tool 'sonarQube scanner';
-def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-
-pipeline {
-  agent any
-
-  stages {
-    stage('SCM') {
-      steps {
-        //checkout scm // This Doesn't need this step because is doing it on the pipeline UI config
-        echo "This step is configured in the pipeline UI"
-      }
-    }
-    stage('JS Test') {
-      steps {
-        dir('Application'){
-          bat "npm install"
-          bat "npm run test"
-        }
-      }
-    }
-    stage('SonarQube Analysis') {
-      steps {
-        dir('Application'){
-          withSonarQubeEnv() {
-            bat "${scannerHome}/bin/sonar-scanner"
-          }
-        }
-      }
-    }
-    stage('Quality Gate') {
-      steps {
-        timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
-          if (qg.status != 'OK') {
-            error "Pipeline aborted due to quality gate failure: ${qg.status}"
-          }
-        }
-      }
-    }
-  }
-}
-
-/*
 node {
   stage('SCM') {
     checkout scm
@@ -70,6 +27,3 @@ node {
     }
   }
 }
-
-
-*/
