@@ -4,6 +4,7 @@ node {
   }
   stage('JS Test'){
     dir('Application'){
+      bat "npm install"
       bat "npm run test"
     }
   }
