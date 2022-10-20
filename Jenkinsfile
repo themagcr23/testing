@@ -1,3 +1,6 @@
+def scannerHome = tool 'sonarQube scanner';
+def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+
 pipeline {
   agent any
 
@@ -20,14 +23,12 @@ pipeline {
       steps {
         dir('Application'){
           withSonarQubeEnv() {
-            def scannerHome = tool 'sonarQube scanner';
             bat "${scannerHome}/bin/sonar-scanner"
           }
         }
       }
     }
-    stage('SonarQube Analysis') {
-      def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+    stage('Quality Gate') {
       steps {
         timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
           if (qg.status != 'OK') {
