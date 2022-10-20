@@ -18,16 +18,6 @@ require('dayjs/locale/fr');
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const doSomething = a => {
-	if (a === NaN) {
-		console.log('a is not a number'); // this is dead code
-	}
-
-	return a;
-};
-
-doSomething('qwerty');
-
 const App = () => (
 	<SafeAreaProvider>
 		<ErrorBoundary>
