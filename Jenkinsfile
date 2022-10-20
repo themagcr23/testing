@@ -5,6 +5,7 @@ pipeline {
         stage('SCM') {
             steps {
                 //checkout scm // This Doesn't need this step because is doing it on the pipeline UI config
+                echo "This step is configured in the pipeline UI"
             }
         }
         stage('JS Test') {
