@@ -4,12 +4,15 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
-                checkout scm
+                //checkout scm // This Doesn't need this step because is doing it on the pipeline UI config
             }
         }
-        stage('Test') {
+        stage('JS Test') {
             steps {
-                echo 'Testing..'
+              dir('Application'){
+                bat "npm install"
+                bat "npm run test"
+              }
             }
         }
         stage('Deploy') {
