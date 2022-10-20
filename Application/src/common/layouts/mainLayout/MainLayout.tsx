@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Image, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { withTranslation } from 'react-i18next';
 import styles from './MainLayout.style';
-import Logo from './components/logo/Logo';
-import Hamburger from 'react-native-animated-hamburger';
+//import Logo from './components/logo/Logo';
+//import Hamburger from 'react-native-animated-hamburger';
 import MainContent from 'assets/svgs/mainContent.svg';
 import Filters from './components/filters/Filters';
-import SearchLogo from 'assets/svgs/search.svg';
+//import SearchLogo from 'assets/svgs/search.svg';
 import FilterLogo from 'assets/svgs/filter.svg';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -41,7 +41,7 @@ const MainLayout: React.FC<Props> = ({
 				<View style={styles.headerContainer}>
 					<View style={styles.headerContent}>
 						<View style={styles.menuContent}>
-							<Hamburger
+							{/*<Hamburger
 								type={pageName === 'Detalhes' ? 'arrow' : 'cross'}
 								active={menuActive}
 								onPress={() => {
@@ -49,7 +49,7 @@ const MainLayout: React.FC<Props> = ({
 									console.log('menuActive', menuActive);
 									navigation.navigate('MenuScreen');
 								}}
-							/>
+							/>*/}
 						</View>
 						{selectTypeActive && (
 							<View style={styles.menuContent}>
@@ -58,7 +58,7 @@ const MainLayout: React.FC<Props> = ({
 						)}
 					</View>
 					<View style={styles.logoContainer}>
-						<Logo />
+						{/*<Logo />*/}
 					</View>
 				</View>
 				<View style={styles.pageTitleContainer}>
@@ -66,9 +66,6 @@ const MainLayout: React.FC<Props> = ({
 						<Text style={styles.headerContentTitle}>{pageName}</Text>
 						{hasFilters && (
 							<View style={styles.filterContainer}>
-								<TouchableWithoutFeedback onPress={() => setShowFilter(!showFilter)}>
-									<SearchLogo style={styles.fliterContainerIcon} />
-								</TouchableWithoutFeedback>
 								<TouchableWithoutFeedback
 									onPress={() => {
 										navigation.navigate('BottomMenuLayout', {
@@ -99,7 +96,7 @@ const MainLayout: React.FC<Props> = ({
 			</View>
 			<View style={styles.mainContentContainer}>
 				<View style={styles.mainContentBackDrop}>
-					<MainContent preserveAspectRatio="none" />
+					{/*<MainContent preserveAspectRatio="none" />*/}
 				</View>
 				{children}
 			</View>

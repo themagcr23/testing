@@ -29,6 +29,7 @@ const ProductsScreen = () => {
 	});
 
 	const [products, setProducts] = useState<ProductDto[]>([]);
+	const [totalProducts, setTotalProducts] = useState<number>(0);
 
 	const prods: ProductDto[] = [
 		{
@@ -39,7 +40,109 @@ const ProductsScreen = () => {
 				'https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwe2dd947b/images/col/709/7099734-frente.jpg',
 			imageUrl:
 				'https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwe2dd947b/images/col/709/7099734-frente.jpg',
-			quantity: 'emb. 75',
+			quantity: '75',
+			quantityUnitName: 'cl',
+			price: 2.99,
+			priceUnitName: 'un',
+			subPrice: 3.99,
+			subPriceUnitName: 'lt',
+			itemMarket: null,
+			storeId: '',
+			storeName: '',
+			storeLogoPath: '',
+			storeUrl: '',
+			markets: [
+				{
+					id: 1,
+					photo: 'https://seeklogo.com/images/C/continente-hipermercados-logo-D8005E7534-seeklogo.com.png',
+					title: 'Continente',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.continente.pt/',
+				},
+				{
+					id: 2,
+					photo: 'https://scontent.fopo2-1.fna.fbcdn.net/v/t39.30808-6/271499052_3226809540976657_5176884220155632016_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6cYCVBGCAGoAX9nSxLp&_nc_ht=scontent.fopo2-1.fna&oh=00_AT9F6lf1_azB7-o7J-dRixRKCidSDnqb19KblcUltEohAg&oe=633E5A9E',
+					title: 'Auchan',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.auchan.pt/',
+				},
+				{
+					id: 3,
+					photo: 'https://cdn3.commerce-associe.fr/sites/default/files/styles/logo_enseigne/public/2018-08/Intermarche%CC%81-hyper-logo-270x160.png',
+					title: 'Intermarché',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.intermarche.pt/',
+				},
+				{
+					id: 4,
+					photo: 'https://seeklogo.com/images/C/continente-hipermercados-logo-D8005E7534-seeklogo.com.png',
+					title: 'Continente',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.continente.pt/',
+				},
+				{
+					id: 5,
+					photo: 'https://scontent.fopo2-1.fna.fbcdn.net/v/t39.30808-6/271499052_3226809540976657_5176884220155632016_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6cYCVBGCAGoAX9nSxLp&_nc_ht=scontent.fopo2-1.fna&oh=00_AT9F6lf1_azB7-o7J-dRixRKCidSDnqb19KblcUltEohAg&oe=633E5A9E',
+					title: 'Auchan',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.auchan.pt/',
+				},
+				{
+					id: 6,
+					photo: 'https://cdn3.commerce-associe.fr/sites/default/files/styles/logo_enseigne/public/2018-08/Intermarche%CC%81-hyper-logo-270x160.png',
+					title: 'Intermarché',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.intermarche.pt/',
+				},
+				{
+					id: 7,
+					photo: 'https://seeklogo.com/images/C/continente-hipermercados-logo-D8005E7534-seeklogo.com.png',
+					title: 'Continente',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.continente.pt/',
+				},
+				{
+					id: 8,
+					photo: 'https://scontent.fopo2-1.fna.fbcdn.net/v/t39.30808-6/271499052_3226809540976657_5176884220155632016_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6cYCVBGCAGoAX9nSxLp&_nc_ht=scontent.fopo2-1.fna&oh=00_AT9F6lf1_azB7-o7J-dRixRKCidSDnqb19KblcUltEohAg&oe=633E5A9E',
+					title: 'Auchan',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.auchan.pt/',
+				},
+				{
+					id: 9,
+					photo: 'https://cdn3.commerce-associe.fr/sites/default/files/styles/logo_enseigne/public/2018-08/Intermarche%CC%81-hyper-logo-270x160.png',
+					title: 'Intermarché',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.intermarche.pt/',
+				},
+				{
+					id: 10,
+					photo: 'https://cdn3.commerce-associe.fr/sites/default/files/styles/logo_enseigne/public/2018-08/Intermarche%CC%81-hyper-logo-270x160.png',
+					title: 'Intermarché',
+					price: '€2,99/un',
+					secondPrice: '€3,99/lt',
+					externalLink: 'https://www.intermarche.pt/',
+				},
+			],
+		},
+		{
+			id: '2',
+			name: 'zAzeite Virgem Extra Selecionado Pet',
+			brand: 'Oliveria da Serra',
+			productUrl:
+				'https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwe2dd947b/images/col/709/7099734-frente.jpg',
+			imageUrl:
+				'https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwe2dd947b/images/col/709/7099734-frente.jpg',
+			quantity: '75',
 			quantityUnitName: 'cl',
 			price: 2.99,
 			priceUnitName: 'un',
@@ -312,9 +415,10 @@ const ProductsScreen = () => {
 	const onSearch = async () => {
 		try {
 			Loading.show();
-			const result = prods; //await ProductsService.getList(criteria);
-			setProducts(result);
-			//setProducts(criteria.page === 1 ? result.items : [...products, ...result.items]);
+			//const result = await ProductsService.getList(criteria);
+			const result = { items: [...prods], totalItems: 1 };
+			setProducts(criteria.page === 1 ? result.items : [...products, ...result.items]);
+			setTotalProducts(result.totalItems);
 			Loading.hide();
 		} catch (error) {
 			Alert.error('erro', 'erro ao carregar');
@@ -324,61 +428,80 @@ const ProductsScreen = () => {
 	};
 
 	useEffect(() => {
-		//onSearch();
+		onSearch();
 	}, [criteria]);
+
+	const onQuantityChange = (product: ProductDto, qtdIncrement: any) => {
+		let newProds = products;
+		let productIndex = products.findIndex(x => x.id === product.id);
+
+		newProds[productIndex].quantity = Number(newProds[productIndex].quantity) + qtdIncrement;
+
+		setProducts([...newProds]);
+	};
 
 	return (
 		<MainLayout pageName="Produtos" hasFilters>
-			<ScrollView contentContainerStyle={styles.container}>
-				{prods && prods.length && (
-					<View style={styles.container}>
-						<HeaderInfo
-							orderLabel={'ordenação alfabética'}
-							onPress={() => setOrder(!order)}
-							mode={order}
-							numberProducts={prods.length}
-						/>
-						{prods.map(x => {
-							return (
-								<Card
-									key={x.id}
-									onPress={() =>
-										navigation.navigate('DetailsProductScreen', {
-											product: x,
-										})
-									}
-									isButtonQuantity={true}
-									isClickable={true}
-									quantity={0}
-								>
-									<View style={styles.card}>
-										<Image
-											source={{ uri: x.imageUrl }}
-											resizeMode={'center'}
-											style={styles.imageContainer}
-										/>
-										<View style={styles.infoContainer}>
-											<Text style={styles.boldLabel}>{x.name}</Text>
-											<Text style={styles.label}>{x.brand}</Text>
-											<Text style={styles.smallLabel}>
-												{x.quantity + ' ' + x.quantityUnitName}
-											</Text>
-											<View style={styles.inlineContainer}>
-												<Text style={styles.primaryLabel}>
-													{'€' + x.price.toString() + '/' + x.priceUnitName}
+			<View style={styles.container}>
+				<View style={styles.containerInfo}>
+					<HeaderInfo
+						orderLabel={'ordenação alfabética'}
+						onPress={() => setOrder(!order)}
+						mode={order}
+						numberProducts={totalProducts}
+					/>
+				</View>
+				<ScrollView contentContainerStyle={styles.container}>
+					{products && products.length > 0 && (
+						<View>
+							{products.map(x => {
+								return (
+									<Card
+										testID={'card'}
+										key={x.id}
+										onPress={() =>
+											navigation.navigate('DetailsProductScreen', {
+												product: x,
+											})
+										}
+										isButtonQuantity={true}
+										isClickable={true}
+										onQuantityChange={qtdIncrement => {
+											onQuantityChange(x, qtdIncrement);
+										}}
+										quantity={Number(x.quantity)}
+									>
+										<View style={styles.card}>
+											<Image
+												source={{ uri: x.imageUrl }}
+												resizeMode={'center'}
+												style={styles.imageContainer}
+											/>
+											<View style={styles.infoContainer}>
+												<Text style={styles.boldLabel} testID="cardName">
+													{x.name}
 												</Text>
-												<Text style={styles.label}>
-													{'€' + x.subPrice.toString() + '/' + x.subPriceUnitName}
+												<Text style={styles.label}>{x.brand}</Text>
+												<Text style={styles.smallLabel}>
+													{x.quantity + ' ' + x.quantityUnitName}
 												</Text>
+												<View style={styles.inlineContainer}>
+													<Text style={styles.primaryLabel}>
+														{'€' + x.price.toString() + '/' + x.priceUnitName}
+													</Text>
+													<Text style={styles.label}>
+														{'€' + x.subPrice.toString() + '/' + x.subPriceUnitName}
+													</Text>
+												</View>
 											</View>
 										</View>
-									</View>
-								</Card>
-							);
-						})}
-					</View>
-				)}
-			</ScrollView>
+									</Card>
+								);
+							})}
+						</View>
+					)}
+				</ScrollView>
+			</View>
 		</MainLayout>
 	);
 };
