@@ -17,10 +17,10 @@ pipeline {
       }
     }
     stage('SonarQube Analysis') {
-      def scannerHome = tool 'sonarQube scanner'
       steps {
         dir('Application'){
           withSonarQubeEnv() {
+            def scannerHome = tool 'sonarQube scanner';
             bat "${scannerHome}/bin/sonar-scanner"
           }
         }
