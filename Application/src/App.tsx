@@ -19,7 +19,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 // branch da main
 
-// Do Something 2
+// Do Something 3
 
 const App = () => (
 	<SafeAreaProvider>
