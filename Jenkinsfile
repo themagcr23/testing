@@ -39,7 +39,7 @@ pipeline {
                 echo 'Hello World'
             }
         }
-    },
+    }
     properties{
         pipelineTriggerProperty{
             deleteActionJobsToTrigger('job1, job3') // Comma separated list of Jobs
