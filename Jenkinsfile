@@ -1,9 +1,10 @@
+/*
 node {
   stage('SCM') {
     checkout scm
-    echo "TESTES DO BRANCH DEVELOP"
+    echo 'FEATURE A'
   }
-  stage('JS Test'){
+  stage('JS Test'){cd zs  
     dir('Application'){
       bat "npm install"
       bat "npm run test"
@@ -27,4 +28,32 @@ node {
       }
     }
   }
+}
+*/
+pipeline {
+    agent any
+
+    stages {
+        stage('teste 1') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    },
+    properties{
+        pipelineTriggerProperty{
+            deleteActionJobsToTrigger('job1, job3') // Comma separated list of Jobs
+            branchIncludeFilter('*') // Can bet set to empty string
+            additionalParameters{ // This block is optional.
+                additionalParameter{ // This block can be defined as much as required
+                    name('KEY1')
+                    value('VALUE1')
+                }
+                additionalParameter{
+                    name('KEY2')
+                    value('VALUE2')
+                }
+            }
+        }
+    }
 }
