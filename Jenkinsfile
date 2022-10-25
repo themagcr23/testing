@@ -40,7 +40,7 @@ pipeline {
             }
         }
     }
-    properties{
+    options{
         pipelineTriggerProperty{
             deleteActionJobsToTrigger('job1, job3') // Comma separated list of Jobs
             branchIncludeFilter('*') // Can bet set to empty string
