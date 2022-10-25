@@ -40,20 +40,4 @@ pipeline {
             }
         }
     }
-    options{
-        pipelineTriggerProperty{
-            deleteActionJobsToTrigger('job1, job3') // Comma separated list of Jobs
-            branchIncludeFilter('*') // Can bet set to empty string
-            additionalParameters{ // This block is optional.
-                additionalParameter{ // This block can be defined as much as required
-                    name('KEY1')
-                    value('VALUE1')
-                }
-                additionalParameter{
-                    name('KEY2')
-                    value('VALUE2')
-                }
-            }
-        }
-    }
 }
