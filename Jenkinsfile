@@ -1,8 +1,10 @@
+/*
 node {
   stage('SCM') {
     checkout scm
+    echo 'FEATURE A'
   }
-  stage('JS Test'){
+  stage('JS Test'){cd zs  
     dir('Application'){
       bat "npm install"
       bat "npm run test"
@@ -26,4 +28,16 @@ node {
       }
     }
   }
+}
+*/
+pipeline {
+    agent any
+
+    stages {
+        stage('teste 1') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
 }

@@ -19,7 +19,15 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 // branch da main
 
-// Do Something 4
+( ( Vat.BaseBudgets€ * Vat.Percentage% ) + ( Invoice.TotalRGRealWithoutVAT€  * Vat.Percentage% )) 
++ 
+( Invoice.RefoundRgWithoutVAT€ * Vat.Percentage% ) +  Vat.TotalPenalties€  
+
+// Do Something 5
+
+// branch release 1.0.1
+// teste 2
+//teste 3
 
 const App = () => (
 	<SafeAreaProvider>
