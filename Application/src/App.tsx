@@ -26,6 +26,7 @@ dayjs.extend(timezone);
 // Do Something 5
 
 // branch release 1.0.1
+// teste 2
 
 const App = () => (
 	<SafeAreaProvider>
